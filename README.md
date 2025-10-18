@@ -29,7 +29,26 @@ export DISPLAY=host.docker.internal:0
 ```shell
 docker run -it -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix px4io/px4-dev-simulation-jammy:latest
 ```
-
+6. 進入容器後：
+```shell
+apt update
+apt install x11-apps -y
+xclock
+```
+7. 如果 /home/px4/PX4-Autopilot 不存在，可能是你使用的映像未自動 clone PX4 專案。你可以手動 clone：
+```shell
+cd /home/px4
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+cd PX4-Autopilot
+```
+```shell
+apt update
+apt install libgl1-mesa-glx libglu1-mesa libxt6 libxrender1 libxrandr2 libxinerama1 libxi6 -y
+```
+8. 啟動
+```shell
+make px4_sitl jmavsim
+```
 
 請從GitHub下載input.cf（此為範例檔案，可依照其輸入格式調整並修改內容結構）與main.c檔案，具體操作步驟如下所示：
 1. 請依據input.cf的內容格式規劃並設計桁架結構（類似以下的內容），並將其儲存為副檔名為*.cf的檔案。
