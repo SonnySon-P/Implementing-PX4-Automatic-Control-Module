@@ -15,8 +15,8 @@
 
 ## 貳、操作說明
 **一、安裝步驟：**
-1. PX4與Gazebo安裝步驟，可依照[px4.io官方網站](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
-2. 
+1. PX4與Gazebo安裝步驟，可依照[Setting up a Developer Environment](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
+2. QGroundControl安裝步驟，可依照[QGroundControl Installation](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
 
 
 
