@@ -17,49 +17,30 @@
 **一、安裝步驟：**
 1. PX4與Gazebo安裝步驟，可依照[Setting up a Developer Environment](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
 2. QGroundControl安裝步驟，可依照[QGroundControl Installation](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
-
-
-
-
-
-
-
-
-
-3. 在Docker環境中拉取最新的px4io/px4-dev-simulation-jammy映像檔。
-4. 啟動XQuartz，並允許網絡連接。（XQuartz版本為XQuartz 2.8.5，請由選單setting → 在Security標籤頁，勾選Allow connections from network clients）
-```shell
-xhost + 127.0.0.1
-xhost + localhost
+**四、檔案說明：**
+```bash
+.
+├── PX4-Autopilot/
+└── src/
+     └──  modules/
+           └──  simple_mission/
+                 ├── simple_mission.cpp
+                 └── CMakeLists.txt
 ```
-5. 設置DISPLAY環境變數，作為Docker容器與宿主機之間的橋樑。
-```shell
-export DISPLAY=host.docker.internal:0
-```
-5. 運行Docker容器
-```shell
-docker run -it -e DISPLAY=host.docker.internal:0 -v /tmp/.X11-unix:/tmp/.X11-unix px4io/px4-dev-simulation-jammy:latest
-```
-6. 進入容器後：
-```shell
-apt update
-apt install x11-apps -y
-xclock
-```
-7. 如果 /home/px4/PX4-Autopilot 不存在，可能是你使用的映像未自動 clone PX4 專案。你可以手動 clone：
-```shell
-cd /home/px4
-git clone https://github.com/PX4/PX4-Autopilot.git --recursive
-cd PX4-Autopilot
+```text
+add_subdirectory(src/modules/simple_mission)
 ```
 ```shell
-apt update
-apt install libgl1-mesa-glx libglu1-mesa libxt6 libxrender1 libxrandr2 libxinerama1 libxi6 -y
+make clean
+make px4_sitl_default
 ```
-8. 啟動
+
+1. 開啟QGroundControl
+2. 啟動SITL模擬
 ```shell
-make px4_sitl jmavsim
+make px4_sitl gz_x500
 ```
+
 
 請從GitHub下載input.cf（此為範例檔案，可依照其輸入格式調整並修改內容結構）與main.c檔案，具體操作步驟如下所示：
 1. 請依據input.cf的內容格式規劃並設計桁架結構（類似以下的內容），並將其儲存為副檔名為*.cf的檔案。
