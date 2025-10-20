@@ -1,22 +1,33 @@
 # Implementing PX4 simple automatic control module
 
-基於jMAVSim的PX4自動控制模組模擬
+基於Gazebo Classic的PX4自動控制模組模擬。
 
 ## 壹、基本說明
 **一、目標：**
-為了實現本專案，計畫設計一套以*.cf檔案格式描述桁架結構的輸入機制。系統將讀取該檔案內容，依據定義的桁架元素建立整體勁度矩陣，並透過矩陣反斜槓運算子進行反矩陣求解。最終，程式將輸出包含桿件位移、內力與應力分析結果的*.txt報告，以供後續查閱與應用。
+以下為一個簡單的PX4模組範例程式碼，旨在實現指定的任務流程：起飛 → 前進1公尺 → 左右各來回1公尺 → 執行360度翻轉 → 降落。該模組可在PX4平台上運行，並透過Gazebo模擬器進行模擬測試。
 
 **二、開發環境：**
 以下是開發該平台所採用的環境：
 * 虛擬機：VirtualBox
+* 作業系統：Ubuntu 22.04.5
 * 程式語言：C++
 * 程式編輯器：Visual Studio Code
 
 ## 貳、操作說明
-**一、操作程式方式：**
-1. 從[XQuartz官方網站](https://www.xquartz.org) 下載最新版本進行安裝（開發設備為搭載Intel處理器的MacBook Pro）。
-2. 在Docker環境中拉取最新的px4io/px4-dev-simulation-jammy映像檔。
-3. 啟動XQuartz，並允許網絡連接。（XQuartz版本為XQuartz 2.8.5，請由選單setting → 在Security標籤頁，勾選Allow connections from network clients）
+**一、安裝步驟：**
+1. PX4與Gazebo安裝步驟，可依照[px4.io官方網站](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
+2. 
+
+
+
+
+
+
+
+
+
+3. 在Docker環境中拉取最新的px4io/px4-dev-simulation-jammy映像檔。
+4. 啟動XQuartz，並允許網絡連接。（XQuartz版本為XQuartz 2.8.5，請由選單setting → 在Security標籤頁，勾選Allow connections from network clients）
 ```shell
 xhost + 127.0.0.1
 xhost + localhost
