@@ -17,20 +17,18 @@
 **一、安裝步驟：**
 1. PX4與Gazebo安裝步驟，可依照[Setting up a Developer Environment](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
 2. QGroundControl安裝步驟，可依照[QGroundControl Installation](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
-**四、檔案說明：**
+
+**二、檔案說明：**
 ```bash
 .
 ├── PX4-Autopilot/
 └── src/
      └──  modules/
-           └──  simple_mission/
-                 ├── simple_mission.cpp
+           └──  px4_simple_app/
+                 ├── px4_simple_app.c
                  └── CMakeLists.txt
 ```
-```text
-add_subdirectory(src/modules/simple_mission)
-add_subdirectory(src/examples/px4_simple_2)
-```
+**三、編譯檔案：**
 ```shell
 make clean
 make px4_sitl_default
@@ -41,12 +39,17 @@ make px4_sitl_default
 ```shell
 make px4_sitl gz_x500
 ```
-
-
-請從GitHub下載input.cf（此為範例檔案，可依照其輸入格式調整並修改內容結構）與main.c檔案，具體操作步驟如下所示：
-1. 請依據input.cf的內容格式規劃並設計桁架結構（類似以下的內容），並將其儲存為副檔名為*.cf的檔案。
+1. 模擬截圖
 <br>
   <div align="center">
-  	<img src="./截圖1.png" alt="Editor" width="500">
+  	<img src="./截圖.png" alt="Editor" width="500">
   </div>
 <br>
+
+## 參、反思
+本專案主要在2019年款MacBook Pro上安裝VirtualBox執行PX4模擬環境。然而，由於資源限制，系統經常出現當機或效能瓶頸的情況。儘管無人機模擬可依照程式指令執行相關任務，實務上卻常遭遇模擬中斷、傳感器數值異常等問題，進而影響模擬流程與除錯效率。若本專案程式碼中仍存有疏漏，尚祈讀者不吝指正，並敬請包涵。
+
+```text
+add_subdirectory(src/modules/simple_mission)
+add_subdirectory(src/examples/px4_simple_2)
+```
