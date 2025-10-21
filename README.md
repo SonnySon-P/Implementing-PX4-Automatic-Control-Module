@@ -29,6 +29,7 @@
 ```
 ```text
 add_subdirectory(src/modules/simple_mission)
+add_subdirectory(src/examples/px4_simple_2)
 ```
 ```shell
 make clean
