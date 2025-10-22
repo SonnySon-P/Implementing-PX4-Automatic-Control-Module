@@ -47,9 +47,9 @@ px4_simple_app
 ```
 4. 模擬截圖
 <br>
-  <div align="center">
-  	<img src="./截圖.png" alt="Editor" width="500">
-  </div>
+[![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
+[![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
+
 <br>
 
 安裝 MAVLink C library
