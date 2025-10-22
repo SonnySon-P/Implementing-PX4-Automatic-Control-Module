@@ -45,7 +45,7 @@ make px4_sitl gz_x500
 ```shell
 px4_simple_app
 ```
-4. 模擬影片
+4. 模擬影片（若想觀看，請點擊下方圖片）
 [![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
 
 ## 參、反思
