@@ -1,6 +1,6 @@
 # Implementing PX4 simple automatic control module
 
-基於Gazebo的PX4自動控制模組模擬。
+基於Gazebo的PX4自動控制模無人機自主飛行運動模組開發。
 
 ## 壹、基本說明
 **一、目標：**
