@@ -46,9 +46,9 @@ make px4_sitl gz_x500
 px4_simple_app
 ```
 4. 模擬截圖
-<br>
+
 [![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
-<br>
+
 
 ## 參、反思
 本專案主要在2019年款MacBook Pro上安裝VirtualBox執行PX4模擬環境。然而，由於資源限制，系統經常出現當機或效能瓶頸的情況。儘管無人機模擬可依照程式指令執行相關任務，實務上卻常遭遇模擬中斷、傳感器數值異常等問題，進而影響模擬流程與除錯效率。若本專案程式碼中仍存有疏漏，尚祈讀者不吝指正，並敬請包涵。
