@@ -19,12 +19,12 @@
 2. QGroundControl安裝步驟，可依照[QGroundControl Installation](https://docs.px4.io/main/en/dev_setup/dev_env_linux_ubuntu) 進行安裝。
 
 **二、檔案說明：**
-1. 請從GitHub下載px4_simple_app.c與CMakeLists.txt檔案，並將至於以下資料夾中。
+1. 請從GitHub下載px4_simple_app.c檔案，並將其替換為px4_simple_app資料夾中的舊檔案。在開發過程中，我曾嘗試在modules資料夾中新增一個新的模組，但在編譯時遇到了一些困難，導致無法成功完成。因此，我希望採用這種方法來加速模組的開發流程。
 ```bash
 .
 ├── PX4-Autopilot/
 └── src/
-     └──  modules/
+     └──  examples/
            └──  px4_simple_app/
                  ├── px4_simple_app.c
                  └── CMakeLists.txt
@@ -48,16 +48,7 @@ px4_simple_app
 4. 模擬截圖
 <br>
 [![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
-[![PX4運行過程](截圖.png)](https://github.com/user-attachments/assets/dc8e6b00-611d-4bcf-a0e8-75e75cf3a5d2)
-
 <br>
-
-安裝 MAVLink C library
-```shell
-pip install pymavlink
-git clone https://github.com/mavlink/c_library_v2.git
-```
-
 
 ## 參、反思
 本專案主要在2019年款MacBook Pro上安裝VirtualBox執行PX4模擬環境。然而，由於資源限制，系統經常出現當機或效能瓶頸的情況。儘管無人機模擬可依照程式指令執行相關任務，實務上卻常遭遇模擬中斷、傳感器數值異常等問題，進而影響模擬流程與除錯效率。若本專案程式碼中仍存有疏漏，尚祈讀者不吝指正，並敬請包涵。
